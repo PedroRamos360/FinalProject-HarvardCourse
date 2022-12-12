@@ -1,0 +1,26 @@
+{% extends 'closet/layout.html' %}
+
+{% block pagetitle %}{{ look.name }}{% endblock %}
+
+{% load static %}
+
+{% block script %}
+    <script src="{% static 'closet/looks.js' %}"></script>
+    <script src="{% static 'closet/closet.js' %}"></script>
+    <script src="{% static 'closet/look.js' %}"></script>
+{% endblock %}
+
+{% block page %}
+    <main id="lookpage">
+        <div class="lookobject">
+            {% for item in clothes %}
+                <div class="lookitem">
+                    <div id='img{{item.id}}' class="closetimg" style="margin:0;">
+                        <img src="{{item.image.url}}" alt="look image">
+                    </div>
+                    <p style="color:white;">{{ item.name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

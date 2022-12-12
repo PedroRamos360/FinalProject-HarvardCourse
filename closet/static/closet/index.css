@@ -1,0 +1,480 @@
+* {
+    font-family: 'Josefin Sans';
+}
+
+html {
+    overflow: hidden;
+    height: 100vh;
+}
+
+header {
+    justify-content: space-between;
+}
+
+.headerhr {
+    border: 1px solid rgb(170, 170, 170);
+    margin: 0px;
+    width: 100vw;
+}
+
+#signup {
+    text-decoration: none;
+}
+
+#signup button, #submit, #clothingbutton, #selectimagebutton, #selectimagebutton2 {
+    display: flex;
+    background-color: #C850C0;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 80px;
+    height: 40px;
+    border: none;
+    transition: 0.2s;
+}
+
+#signup button:hover, #submit:hover {
+    background-color: #ac46a5;
+}
+
+#title {
+    font-family: 'Grand Hotel';
+    color: #C850C0;
+    margin: 0;
+    font-size: 40px;
+}
+
+#navbar {
+    position: absolute;
+    right: 50px;
+    align-items: center;
+}
+
+#navbar h5 {
+    padding: 0;
+    margin: 0;
+    color:rgb(170, 170, 170);
+
+}
+
+.nav-li {
+    margin-left: 10px;
+}
+
+#girlimg {
+    width: 470px;
+}
+
+#home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    width: 100vw;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+#home h1 {
+    margin-top: 100px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    font-family: Inter;
+}
+
+#home p {
+    font-size: 22px;
+    color:rgb(223, 223, 223);
+    width: 600px;
+    text-align: center;
+    font-family: Inter;
+}
+
+#imgdiv {
+    margin-top: 8px;
+    height: 590px;
+    width: 590px;
+    background-image: linear-gradient(#FFCC70, #ffb325);
+    border-radius: 50%;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#hometext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sign up and Sign in CSS */
+
+#signupage {
+    display: flex;
+    height: 90vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(225deg, #923b8c 0%, #C850C0 50%, #ff6af5 100%);
+}
+
+#signinpage {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(225deg, #923b8c 0%, #C850C0 50%, #ff6af5 100%);
+}
+
+.signuplabel {
+    color:black;
+    font-size:large;
+}
+
+.signupform {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 500px;
+    padding: 20px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.signinform {
+    height: 300px;
+    margin-bottom: 50px;
+}
+
+.input {
+    width: 350px;
+}
+
+/* User home page*/
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 60px;
+    background-color: #f8f9fa;
+}
+
+#footerul {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 400px 0 400px;
+}
+
+.footerli {
+    display: inline;
+    width: fit-content !important;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.purple {
+    color: #C850C0;
+}
+
+.purple:hover {
+    color: #973c91;
+}
+
+/* Header from user pages */
+
+#pageheader {
+    /* background: linear-gradient(225deg, #923b8c 0%, #C850C0 50%, #ff6af5 100%); */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+
+#pagetitle {
+    color: white;
+    margin: 10px 0 10px 0;
+    font-weight: bold;
+}
+
+/* Closet */
+
+html, body {
+    height: 100%;
+}
+
+#pages {
+    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#closetpage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr auto;
+    justify-items: center;
+    align-items: center;
+}
+
+#lookspage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr auto;
+    justify-content: center;
+    justify-items: center;
+}
+
+.look {
+    background-color: white;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+.lookname {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #ce64c7;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#lookpage {
+    padding: 30px 100px 0 100px;
+}
+
+.lookobject {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.addimage, .addimage:hover, .addimage:active, .addimage:focus {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.addimage:hover {
+    cursor: pointer;
+}
+
+.addicon {
+    font-size: 80px; 
+    color: white;
+    margin-top: 10px;
+}
+
+.addicon:hover {
+    color: rgb(214, 214, 214);
+}
+
+#search, #search:focus {
+    width: 200px;
+    outline: none;
+    background: white;
+    border: 2px solid white;
+    color: rgb(90, 90, 90);
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+#search::placeholder {
+    color: #AAA;
+}
+
+.closetimg {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: aliceblue;
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+}
+
+
+.closetimg img {
+    display: flex;
+    border-radius: 8px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+#headerfilter {
+    margin: 10px 0 10px 0;
+    display: flex;
+    width: 600px;
+
+}
+
+#closetheader {
+    display:flex;
+    width:100vw;
+    justify-content:center;
+    align-items: center;
+    margin: 10px 0 10px 0;
+}
+
+.categorybutton {
+    height: 38px;
+}
+
+#imgbutton {
+    display: flex;
+    width: 100px;
+    height: 60px;
+}
+
+/* Create closet item */
+.clothingform {
+    height: fit-content;
+    max-height: 500px;
+    margin-bottom: 60px;
+    padding: 10px;
+}
+
+#clothingbutton {
+    width: 150px;
+    height: 40px;
+}
+
+#selectimagebutton {
+    width: 350px;
+    background-color: #007bff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#selectimagebutton:hover {
+    background-color: #0068d8;
+}
+
+#selectimagebutton2 {
+    width: 150px;
+    height: 30px;
+    margin-left: 10px;
+    background-color: #C850C0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.previewimage {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+/* Create Category */
+
+.categoryform {
+    height: 250px;
+    margin-bottom: 100px;
+}
+
+/* Create Look Form */
+
+.createLookForm {
+    border-radius: 8px;
+    display: flex;
+    height: 540px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.lookformgroup {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectlook {
+    margin-bottom: 10px;
+}
+
+.lookbtn {
+    background-color: #C850C0;
+    border-radius: 8px;
+    color: white;
+    width: 160px;
+    height: 40px;
+    border: none;
+    transition: 0.2s;
+}
+
+.lookbtn:hover {
+    background-color: #ac46a5;
+}
+
+.lookadd {
+    font-size: 60px; 
+    color: #C850C0;
+    margin-top: 10px;
+}
+
+.lookadd:hover {
+    color: #ac46a5;
+}
+
+.select {
+    display: flex;
+}
+
+.selects {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 250px;
+}
+
+
+.trashbtn, .trashbtn:active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    height: 38px;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+.trashicon {
+    color: red;
+    font-size: 38px;
+    height: 38px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+.trashicon:hover {
+    color: rgb(209, 0, 0);
+}

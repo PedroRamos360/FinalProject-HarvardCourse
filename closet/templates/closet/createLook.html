@@ -1,0 +1,55 @@
+{% extends 'closet/layout.html' %}
+
+{% load static %}
+
+{% block Header %}{% endblock %}
+
+{% block script %}
+    <script src="{% static 'closet/index.js' %}"></script>
+    <script src="{% static 'closet/looks.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+    <main id="signinpage">
+        {% if message %}
+            <div class="alert alert-light" role="alert" style="color:red;font-size:20px;">
+                <i class="bi bi-exclamation-triangle text-danger" style="font-size: 25px;"></i>
+                {{ message }}
+            </div>
+        {% endif %}
+        <form action="/looks/create" method="POST" class='signupform clothingform createLookForm' enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="signuplabel">Look name</label>
+                <input class="form-control input" autofocus type="text" name="name" required>
+            </div>
+            <div class="form-group lookformgroup" style="overflow: hidden">
+                <div class="selects">
+                    <div class="select">
+                        <select class="form-control input selectlook" name="clothingItem_id0" onchange="handleClothingChange(event)">
+                            <option hidden disabled selected> -- select an option -- </option>
+                            {% for cloth in clothes %}
+                                <option value="{{cloth.id}}">{{cloth.name}}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="button" class="trashbtn" onclick="removeSelect(event)">
+                            <i class="bi bi-x-square-fill trashicon"></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="button" class="addimage lookadd" onclick="addSelect()">
+                    <i class="bi bi-plus-square-dotted lookadd"></i>
+                </button>
+            </div>
+            <div class="form-group" style="display: flex;flex-direction:row;">
+                <label class="signuplabel">Look Image*</label>
+                <label for="image" id="selectimagebutton2">Select Image</label>
+                <input onchange='handleImageChangeLook()' class="form-control-file input" type="file" name="image" 
+                id="image" accept="image/png, image/jpg, image/jpeg, image/webp" required style="display:none;">
+                <p style="margin-left: 10px" class="emptyp">Empty</p>
+                <p style="margin-left: 10px" hidden class="imagechoosenp">Changed <strong class="imagechoosen" hidden>0</strong> time(s)</p>
+            </div>
+            <button type="submit" class="lookbtn">Create Look</button>
+        </form>
+    </main>
+{% endblock %}

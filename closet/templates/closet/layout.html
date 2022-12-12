@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Inter:wght@400;900&display=swap" rel="stylesheet">
+        <title>Virtual Closet</title>
+
+        <link rel="stylesheet" href="{% static 'closet/index.css' %}">
+        <script src="{% static 'closet/index.js' %}"></script>
+
+        {% block script %}
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a href="/" style="text-decoration:none;"><h3 id="title">Virtual Closet</h3></a>
+
+            <ul class="navbar-nav mr-auto header" id='navbar' >
+                {% if user.is_authenticated %}
+                    <li class='nav-li'>
+                        <h5>{{user.username}}</h5>
+                    </li>
+                    <li class='nav-li'>
+                        <a class="btn btn-danger" href="/logout">Logout</a>
+                    </li>
+                {% else %}
+                    <li class='nav-li'>
+                        <a class="nav-link" href="/signin">Sign in</a>
+                    </li>
+                    <li class='nav-li'>
+                        <a href="/signup" id="signup"><button>Sign up</button></a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+        <hr class="headerhr">
+        {% if user.is_authenticated %}
+            <div id="pages">
+                {% block Header %}
+                    <header id="pageheader">
+                        <h1 id="pagetitle">{% block pagetitle %}{% endblock %}</h1>
+                        {% block header %}{% endblock %}
+                        <hr class="headerhr" style="border:1px solid aliceblue;">
+                    </header>
+                {% endblock %}
+                {% block page %}
+                {% endblock %}
+            </div>
+            <footer>
+                <hr class="headerhr">
+                <ul id="footerul">
+                    <li class="nav-li footerli">
+                        <a href="/closet" class="nav-link purple">Closet</a>
+                    </li>
+                    <li class="nav-li footerli">
+                        <a href="/looks" class="nav-link purple">Looks</a>
+                    </li>
+                </ul>
+            </footer>
+        {% endif %}
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>
